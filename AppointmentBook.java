@@ -11,7 +11,7 @@ public class AppointmentBook {
      * Preconditions: 1 <= period <= 8; 0 <= minute <= 59
      */
     private boolean isMinuteFree(int period, int minute) {
-        return (period<=8 && period>=1 && minute>=0 && minute<=59);
+        return schedule[period][minute];
         /* implementation not shown */ }
 
     /**
@@ -32,6 +32,10 @@ public class AppointmentBook {
      * Preconditions: 1 <= period <= 8; 1 <= duration <= 60
      */
     public int findFreeBlock(int period, int duration) {
+        for (int i = 0; i < schedule[period].length; i++) {
+            if (isMinuteFree(period, i))
+        }
+        return 0;
         /* to be implemented in part (a) */ }
 
     /**
@@ -43,6 +47,7 @@ public class AppointmentBook {
      * Preconditions: 1 <= startPeriod <= endPeriod <= 8; 1 <= duration <= 60
      */
     public boolean makeAppointment(int startPeriod, int endPeriod, int duration){
+        return false;
      /* to be implemented in part (b) */ }
 
     // There may be instance variables, constructors, and methods that are not shown.
