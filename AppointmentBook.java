@@ -32,10 +32,18 @@ public class AppointmentBook {
      * Preconditions: 1 <= period <= 8; 1 <= duration <= 60
      */
     public int findFreeBlock(int period, int duration) {
+        int a = 0;
         for (int i = 0; i < schedule[period].length; i++) {
-            if (isMinuteFree(period, i))
+            if (isMinuteFree(period, i)) {
+                a++;
+                if (a == duration) {
+                    return (i-(duration-1));
+                }
+            } else {
+                a=0;
+            }
         }
-        return 0;
+        return -1;
         /* to be implemented in part (a) */ }
 
     /**
@@ -47,6 +55,11 @@ public class AppointmentBook {
      * Preconditions: 1 <= startPeriod <= endPeriod <= 8; 1 <= duration <= 60
      */
     public boolean makeAppointment(int startPeriod, int endPeriod, int duration){
+        for (int i = startPeriod; i<=endPeriod; i++) {
+            if (findFreeBlock(i,duration)>-1) {
+                return true;
+            }
+        }
         return false;
      /* to be implemented in part (b) */ }
 

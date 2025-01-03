@@ -6,6 +6,7 @@ public class Main {
         for (int i = 50; i<60; i++) schedule[2][i] = true;
 
         AppointmentBook book = new AppointmentBook(schedule);
-        System.out.println(book.findFreeBlock(0, 0));
+        System.out.println(book.findFreeBlock(2, 20));
+        System.out.println(book.makeAppointment(2, 2, 20));
     }
 }
